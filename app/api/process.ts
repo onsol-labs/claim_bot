@@ -25,4 +25,3 @@ export default async function handler(request: NextApiRequest, response: NextApi
     response.status(500).json(e);
   }
 }
-
