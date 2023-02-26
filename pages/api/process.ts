@@ -4,7 +4,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 export default async function handler(request: NextApiRequest, response: NextApiResponse) {
   try {
     const req = request.body;
-    console.log(req)
+    // console.log(req)
 
     if (!req[0] || (req[0].meta && req[0].meta.err != null)) {
       return response.status(200).json('done');;
