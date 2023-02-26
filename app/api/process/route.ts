@@ -4,6 +4,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(request: NextApiRequest, response: NextApiResponse) {
   try {
+    console.log(request)
     const req = request.body;
     console.log(req)
 
