@@ -12,6 +12,7 @@ export default async function handler(request: NextApiRequest, response: NextApi
     //   return response.status(200).json('done');;
     // }
 
+
     // // only new abc domains should be pushed to post in discord.
     // if (txn.meta.innerInstructions[0].instructions.length == 7) {
     //   const domainName = extractDomainId(txn.meta?.logMessages[2]);
