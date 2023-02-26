@@ -1,7 +1,5 @@
-import { consoleLogDomainNames, extractDomainId } from "@/utils";
+import { consoleLogDomainNames, extractDomainId, postClaimToDiscord } from "@/utils";
 import { NextApiRequest, NextApiResponse } from "next";
-// import { ConfirmedSignatureInfo, Connection, PublicKey } from '@solana/web3.js';
-// import { consoleLogDomainNames, extractDomainId, postClaimToDiscord } from "@/utils";
 
 export default async function handler(request: NextApiRequest, response: NextApiResponse) {
   try {
@@ -13,12 +11,12 @@ export default async function handler(request: NextApiRequest, response: NextApi
     }
 
 
-    // // only new abc domains should be pushed to post in discord.
+    // only new abc domains should be pushed to post in discord.
     if (req[0].meta.innerInstructions[0].instructions.length == 7) {
       const domainName = extractDomainId(req[0].meta?.logMessages[2]);
       if (domainName) {
-        consoleLogDomainNames(domainName);
-        // postClaimToDiscord(domainName);
+        // consoleLogDomainNames(domainName);
+        postClaimToDiscord(domainName);
       }
     }
 
